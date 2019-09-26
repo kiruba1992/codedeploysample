@@ -8,12 +8,9 @@ pipeline {
     }
     stage('build') {
       steps {
-        sh 'echo " $git_branch "'
-      }
-    }
-    stage('postbuild') {
-      steps {
-        sh '''docker -version
+        sh '''echo " $pass "
+
+
 
 
 
@@ -22,6 +19,6 @@ pipeline {
     }
   }
   environment {
-    name = 'staging'
+    pass = 'credentials(\'pass\')'
   }
 }
