@@ -8,7 +8,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        sh 'scp  -i "$pvt_key" -rv Jenkinsfile -P 22 root@10.108.23.122:/'
+        sh 'scp  -i "$pvt_key" -P 22 -rv Jenkinsfile  root@10.108.23.122:/'
       }
     }
   }
