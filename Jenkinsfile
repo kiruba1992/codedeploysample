@@ -1,11 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('prebuild') {
-      steps {
-        git(url: 'https://github.com/kiruba1992/Ansible_Cloudwatchlogsagent_Install_PB.git', branch: 'master')
-      }
-    }
     stage('deploy') {
       steps {
         sh 'scp  -i "$pvt_key" -P 22 -rv Jenkinsfile  root@10.108.23.122:/'
