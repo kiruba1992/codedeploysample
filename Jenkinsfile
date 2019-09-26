@@ -8,7 +8,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        sh 'scp  -r * -P 22 root@10.108.23.122:/opt/'
+        sh 'scp  -rv * -P 22 root@10.108.23.122:/opt/'
       }
     }
   }
