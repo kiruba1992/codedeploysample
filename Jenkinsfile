@@ -8,7 +8,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        sh 'scp  -i "/var/jenkins_home/.ssh/id_rsa" -rv * -P 22 root@10.108.23.122:/opt/'
+        sh 'scp  -i "/var/jenkins_home/.ssh/id_rsa" -rv * -P 22 root@10.108.23.122:/kiruba/'
       }
     }
   }
