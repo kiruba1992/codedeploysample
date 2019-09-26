@@ -8,11 +8,7 @@ pipeline {
     }
     stage('cred_set') {
       steps {
-        sh '''withCredentials(bindings: [sshUserPrivateKey(credentialsId: \'89a7299b-ca6f-433e-95b2-36744cb57d9d\', \\
-                                             keyFileVariable: \'sshkey\', 
-                                       \\
-                                             usernameVariable: \'user\')])
-'''
+        sh 'withCredentials(bindings: [sshUserPrivateKey(credentialsId: \'89a7299b-ca6f-433e-95b2-36744cb57d9d\', keyFileVariable: \'sshkey\', usernameVariable: \'user\')])'
       }
     }
     stage('deploy') {
