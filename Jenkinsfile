@@ -8,11 +8,8 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        sh 'scp -r * -p 22 root@10.108.23.122:/opt/ '
+        sh 'scp -r Jenkinsfile -p 22 root@10.108.23.122:/opt/ '
       }
     }
-  }
-  environment {
-    pass = 'credentials(\'pass\')'
   }
 }
